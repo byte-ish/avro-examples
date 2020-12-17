@@ -1,0 +1,93 @@
+{
+	"type":"record",
+	"name":"Transaction",
+	"namespace": "com.example",
+	"fields": [
+		{"name":"Id","type":"string"},
+		{"name":"TimeSent","type":"long","default":-1},
+		{"name":"TimeMessageSent","type":"long","default":-1},
+		{"name":"Time","type":"long"},
+		{"name":"TimeSwitchReceived","type":"long","default":-1},
+		{"name":"TimeSwitchSent","type":"long","default":-1},
+		{"name":"TimeConfirmationReceived","type":"long","default":-1},
+		{"name":"TimeConfirmationSent","type":"long","default":-1},
+		{
+			"name":"Source",
+			"type":{
+				"type":"record",
+				"name":"Source",
+				"fields": [
+					{"name":"Id","type":"string"},
+					{"name":"OwningBank","type":"string"},
+					{"name":"OwningBankName","type":"string","default":""},
+					{"name":"SettlingBank","type":"string","default":""},
+					{"name":"SettlingBankName","type":"string","default":""},
+					{"name":"HandlingBank","type":"string","default":""},
+					{"name":"HandlingBankName","type":"string","default":""},
+					{"name":"Name","type":"string"},
+					{"name":"ActingFor","type":"string","default":""},
+					{"name":"Overseas","type":"boolean","default":false},
+					{"name":"Type","type":"string","default":""}
+				]
+			}
+		},
+		{
+			"name":"Dest",
+			"type":{
+				"type":"record",
+				"name":"Dest",
+				"fields": [
+					{"name":"Id","type":"string"},
+					{"name":"OwningBank","type":"string"},
+					{"name":"OwningBankName","type":"string","default":""},
+					{"name":"SettlingBank","type":"string","default":""},
+					{"name":"SettlingBankName","type":"string","default":""},
+					{"name":"HandlingBank","type":"string","default":""},
+					{"name":"HandlingBankName","type":"string","default":""},
+					{"name":"Name","type":"string"},
+					{"name":"ActingFor","type":"string","default":""},
+					{"name":"Overseas","type":"boolean","default":false},
+					{"name":"Type","type":"string","default":""}
+				]
+			}
+		},
+		{
+			"name":"SourceDevice",
+			"type":{
+				"type":"record",
+				"name":"SourceDevice",
+				"fields": [
+					{"name":"Id","type":"string","default":""},
+					{"name":"Type","type":"string","default":""},
+					{"name":"IpAddress","type":"string","default":""}
+				]
+			},"default":{}
+		},
+		{"name":"Type","type":"string","default":""},
+		{"name":"Value","type":"long"},
+		{"name":"Ref","type":"string"},
+		{"name":"Currency","type":"string"},
+		{"name":"Service","type":"string","default":""},
+		{"name":"Success","type":"boolean","default":false},
+		{"name":"Redirection","type":"boolean","default":false},
+		{"name":"Category","type":"string","default":""},
+		{"name":"E2eRef","type":"string","default":""},
+		{"name":"SourceBatchID","type":"string","default":""},
+		{"name":"DestinationBatchID","type":"string","default":""},
+		{"name":"Auth","type":"string","default":""},
+		{"name":"ThirdParty","type":"boolean","default":false},
+		{
+			"name":"Settlement",
+			"type":{
+				"type":"record",
+				"name":"Settlement",
+				"fields": [
+					{"name":"Time","type":"long","default":-1},
+					{"name":"Cycle","type":"string","default":""},
+					{"name":"Date","type":"string","default":""},
+					{"name":"Priority","type":"string","default":""}
+				]
+			},"default":{}
+		}
+	]
+}
